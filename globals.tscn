@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpjhcgq3dkfmk"]
+
+[ext_resource type="Script" path="res://globals.gd" id="1_3tsh3"]
+
+[node name="Globals" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3tsh3")
+enable_color = Color(0.992157, 0, 0, 1)
+float_color = Color(1, 0.407245, 0.338652, 1)

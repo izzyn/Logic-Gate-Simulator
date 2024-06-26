@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bid2nbnfk6yut"]
+
+[node name="MenuButton" type="MenuButton"]
+layout_direction = 1
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 18
+text = "Menu"
+item_count = 3
+popup/item_0/text = "Load Graph"
+popup/item_0/id = 0
+popup/item_1/text = "Save Graph"
+popup/item_1/id = 1
+popup/item_2/text = "Quit"
+popup/item_2/id = 2

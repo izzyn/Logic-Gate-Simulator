@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=3 uid="uid://cycriuhifi1f0"]
+
+[ext_resource type="Script" path="res://BaseGetter.gd" id="1_ray08"]
+[ext_resource type="Script" path="res://GraphNodes/NOT.gd" id="1_sa3ux"]
+[ext_resource type="Script" path="res://GraphNodes/Input.gd" id="2_jajoy"]
+[ext_resource type="Script" path="res://GraphNodes/IDENTITY_Node.gd" id="2_qqmsr"]
+
+[node name="VBoxContainer" type="VBoxContainer"]
+offset_right = 85.0
+offset_bottom = 55.0
+script = ExtResource("1_ray08")
+
+[node name="NOT" type="GraphNode" parent="."]
+layout_mode = 2
+offset_right = 107.0
+offset_bottom = 55.0
+title = "NOT"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_sa3ux")
+
+[node name="Control" type="Control" parent="NOT"]
+layout_mode = 2
+
+[node name="ID" type="GraphNode" parent="."]
+layout_mode = 2
+offset_top = 59.0
+offset_right = 107.0
+offset_bottom = 114.0
+title = "ID"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("2_qqmsr")
+
+[node name="Control" type="Control" parent="ID"]
+layout_mode = 2
+
+[node name="Input" type="GraphNode" parent="."]
+layout_mode = 2
+offset_top = 118.0
+offset_right = 107.0
+offset_bottom = 206.0
+title = "Input"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+script = ExtResource("2_jajoy")
+
+[node name="CheckButton" type="CheckButton" parent="Input"]
+layout_mode = 2
+text = "On"
+
+[node name="Control" type="Control" parent="Input"]
+layout_mode = 2
+
+[node name="Output" type="GraphNode" parent="."]
+layout_mode = 2
+offset_top = 210.0
+offset_right = 107.0
+offset_bottom = 265.0
+title = "Output"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_sa3ux")
+type = "Output"
+
+[node name="Control" type="Control" parent="Output"]
+layout_mode = 2
+
+[connection signal="pressed" from="Input/CheckButton" to="Input" method="update_input"]
